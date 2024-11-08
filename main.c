@@ -8,7 +8,7 @@ struct contact_details
   char surname[50];
   char name[50];
   char address[50];
-  enum sexe;
+  char sexe[1];
   char telnumber[10];
 };
 
@@ -25,25 +25,25 @@ struct carnet_address{
 };
 */
 
-void contact_afficher(const struct contact_details* a){
-  printf("Le contact est :\n Nom : %s \n Prénom : %s \n Adresse : %s \n Sexe : %s \n Tel : %s ",a->surname, a->name, a->address, a->sexe, a->telnumber);
+void contact_afficher(const struct contact_details* contact){
+  printf("Le contact est :\n Nom : %s \n Prénom : %s \n Adresse : %s \n Sexe : %s \n Tel : %s ",contact->surname, contact->name, contact->address, contact->sexe, contact->telnumber);
 }
 
 
-struct contact_details contact_saisir(struct contact_details *a){
-  a->id =  12;
+struct contact_details contact_saisir(struct contact_details* contact){
+  contact->id =  12;
   printf("Saisir le nom du contact : ");
-  scanf("%s", a->surname);
+  scanf("%s", &contact->surname);
   printf("Saisir le prénom du contact : ");
-  scanf("%s", a->name);
+  scanf("%s", &contact->name);
   printf("Saisir l'adresse du contact : "); //fgets pour les chaines de caractére avec des espaces
-  scanf("%s", a->address);
+  scanf("%s", &contact->address);
   printf("Saisir le sexe du contact (H/F): ");
-  scanf("%d", a->sexe);
+  scanf("%s", &contact->sexe);
   printf("Saisir le numéro de téléphone du contact : ");
-  scanf("%s", a->telnumber);
+  scanf("%s", &contact->telnumber);
 
-  return *a;
+  return *contact;
 
 }
 
