@@ -15,7 +15,8 @@ struct contact_details
 /*
 
 struct contact{
-  struct contact_details **next;
+  struct contact *next;
+  struct contact_details value;
 
 };
 
@@ -38,7 +39,7 @@ struct contact_details contact_saisir(struct contact_details* contact){
   scanf("%s", &contact->name);
   printf("Saisir l'adresse du contact : "); //fgets pour les chaines de caractére avec des espaces
   scanf("%s", &contact->address);
-  printf("Saisir le sexe du contact (H/F): ");
+  printf("Saisir le sexe du contact (H/F) : ");
   scanf("%s", &contact->sexe);
   printf("Saisir le numéro de téléphone du contact : ");
   scanf("%s", &contact->telnumber);
