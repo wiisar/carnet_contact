@@ -34,15 +34,15 @@ void contact_afficher(const struct contact_details* contact){
 struct contact_details contact_saisir(struct contact_details* contact){
   contact->id =  12;
   printf("Saisir le nom du contact : ");
-  scanf("%s", &contact->surname);
+  scanf("%s", contact->surname);
   printf("Saisir le prénom du contact : ");
-  scanf("%s", &contact->name);
+  scanf("%s", contact->name);
   printf("Saisir l'adresse du contact : "); //fgets pour les chaines de caractére avec des espaces
-  scanf("%s", &contact->address);
+  scanf("%s", contact->address);
   printf("Saisir le sexe du contact (H/F) : ");
-  scanf("%s", &contact->sexe);
+  scanf("%s", contact->sexe);
   printf("Saisir le numéro de téléphone du contact : ");
-  scanf("%s", &contact->telnumber);
+  scanf("%s", contact->telnumber);
 
   return *contact;
 
