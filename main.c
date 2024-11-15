@@ -32,7 +32,7 @@ struct pool{
 void contact_afficher(const struct contact_details* contact){
   printf("Le contact est :\n Nom : %s \n Prénom : %s \n Adresse : %s \n Sexe : %s \n Tel : %s\n ID : %d ",contact->surname, contact->name, contact->address, contact->typesexe == H ? "Homme" : "Femme", contact->telnumber,contact->id); 
 }
-void pool_switch(struct contact* contact_add, struct contact *contact_head){
+void pool_add(struct contact* contact_add, struct contact *contact_head){
   if (contact_add == NULL|| contact_head == NULL){
     return ;
   }
@@ -40,12 +40,16 @@ void pool_switch(struct contact* contact_add, struct contact *contact_head){
   contact_head->next = contact_add;
 }
 
+void switch_available_to_used(struct pool *contact_head){
+  pool_add(contact_head->available_head,contact_head->used_head);
+
+  contact_head.available_head = contact_head.available_head->next
+};
 
 void contact_saisir(struct contact_details* contact, struct pool *carnet){
   if (contact == NULL || carnet == NULL){
     return;
   }
-
   char sexe_temp[2];
 
   printf("Saisir le nom du contact : ");
@@ -68,7 +72,7 @@ void contact_saisir(struct contact_details* contact, struct pool *carnet){
   printf("Saisir le numéro de téléphone du contact : ");
   scanf("%s", contact->telnumber);
 
-  //pool_switch(contact,carnet);
+  pool_switch(contact,carnet);
 
 }
 
