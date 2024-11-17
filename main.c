@@ -43,7 +43,7 @@ void pool_add(struct contact* contact_add, struct contact *contact_head){
 void switch_available_to_used(struct pool *contact_head){
   pool_add(contact_head->available_head,contact_head->used_head);
 
-  contact_head.available_head = contact_head.available_head->next
+  contact_head->available_head = contact_head->available_head->next;
 };
 
 void contact_saisir(struct contact_details* contact, struct pool *carnet){
