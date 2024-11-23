@@ -5,7 +5,7 @@
 typedef enum {H,F}sexe;
 
 
-struct contact_details
+struct contact_details // Fiche de contact
 {
   int id;
   char surname[50];
@@ -18,12 +18,12 @@ struct contact_details
 
 
 
-struct contact{
+struct contact{ // liste contenant les contacts
   struct contact *next;
   struct contact_details *value;
 };
 
-struct pool{
+struct pool{ //Pool des deux listes
   struct contact *available_head;
   struct contact *used_head;
 };
